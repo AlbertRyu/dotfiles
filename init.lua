@@ -73,9 +73,12 @@ vim.pack.add({
 
 	-- better diff view
 	"https://github.com/sindrets/diffview.nvim",
+
+	-- tree-sitter better parser managner
+	"https://github.com/nvim-treesitter/nvim-treesitter",
 })
 
-vim.lsp.enable({ "lua_ls", "pyright", "ruff" })
+vim.lsp.enable({ "lua_ls", "ty" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
@@ -86,6 +89,13 @@ require("mini.tabline").setup({})
 --require("mini.completion").setup({})
 
 require("diffview").setup()
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "lua", "python" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
 
 -- enable blink completion
 local cmp = require("blink.cmp")
