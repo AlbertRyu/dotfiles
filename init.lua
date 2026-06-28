@@ -70,6 +70,9 @@ vim.pack.add({
 	-- better completion
 	"https://github.com/Saghen/blink.cmp",
 	"https://github.com/saghen/blink.lib",
+
+	-- better diff view
+	"https://github.com/sindrets/diffview.nvim",
 })
 
 vim.lsp.enable({ "lua_ls", "pyright", "ruff" })
@@ -78,9 +81,11 @@ require("mini.pairs").setup({})
 require("mini.icons").setup({})
 require("mini.files").setup({})
 require("mini.tabline").setup({})
-require("mini.git").setup({})
-require("mini.diff").setup({})
+--require("mini.git").setup({})
+--require("mini.diff").setup({})
 --require("mini.completion").setup({})
+
+require("diffview").setup()
 
 -- enable blink completion
 local cmp = require("blink.cmp")

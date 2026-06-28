@@ -5,12 +5,16 @@ vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open()<CR>")
 vim.keymap.set("n", "<S-h>", ":bprev<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 
-
 -- For calling Lazygit
 vim.keymap.set("n", "<leader>gg", function()
 	vim.cmd("terminal Lazygit")
 	vim.cmd("startinsert")
 end)
+
+-- Toggle Diffview
+vim.keymap.set("n", "<leader>go", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>gc", ":DiffviewClose<CR>")
+vim.keymap.set("n", "<leader>gh", ":DiffviewFileHistory<CR>")
 
 -- Set <J>-<K> to be the shortcut of Esc, very important for me.
 vim.keymap.set("i", "jk", "<Esc>")
