@@ -31,7 +31,7 @@ do
 	vim.opt.signcolumn = "yes"
 
 	--Minimal number of lines above and below the cursor
-	vim.opt.scrolloff = 10
+	vim.opt.scrolloff = 5
 end
 
 -- Tabsize for each language
@@ -80,6 +80,8 @@ vim.pack.add({
 
 	-- tree-sitter better parser managner
 	"https://github.com/nvim-treesitter/nvim-treesitter",
+
+	"https://github.com/Aasim-A/scrollEOF.nvim",
 })
 
 vim.lsp.enable({ "lua_ls", "ty" })
@@ -91,6 +93,8 @@ require("mini.tabline").setup({})
 --require("mini.git").setup({})
 --require("mini.diff").setup({})
 --require("mini.completion").setup({})
+
+require("scrollEOF").setup()
 
 require("diffview").setup()
 
