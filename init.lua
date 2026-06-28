@@ -27,6 +27,7 @@ do
 	--This will save the undo/redo history in a seperate file
 	vim.opt.undofile = true
 
+	-- Keep the column left to number there, so it's not jitter when LSP is attached.
 	vim.opt.signcolumn = "yes"
 end
 
