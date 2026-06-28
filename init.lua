@@ -29,6 +29,9 @@ do
 
 	-- Keep the column left to number there, so it's not jitter when LSP is attached.
 	vim.opt.signcolumn = "yes"
+
+	--Minimal number of lines above and below the cursor
+	vim.opt.scrolloff = 10
 end
 
 -- Tabsize for each language
