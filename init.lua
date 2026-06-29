@@ -90,6 +90,9 @@ require("mini.pairs").setup({})
 require("mini.icons").setup({})
 require("mini.files").setup({})
 require("mini.tabline").setup({})
+require("mini.sessions").setup({
+	autoread = true,
+})
 --require("mini.git").setup({})
 --require("mini.diff").setup({})
 --require("mini.completion").setup({})
@@ -121,6 +124,7 @@ require("keymap")
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
+		tex = { "tex-fmt" },
 	},
 })
 
