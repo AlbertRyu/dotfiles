@@ -84,7 +84,7 @@ vim.pack.add({
 	"https://github.com/Aasim-A/scrollEOF.nvim",
 })
 
-vim.lsp.enable({ "lua_ls", "ty" })
+vim.lsp.enable({ "lua_ls", "ty", "texlab" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
