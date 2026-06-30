@@ -84,7 +84,7 @@ vim.pack.add({
 	"https://github.com/Aasim-A/scrollEOF.nvim",
 })
 
-vim.lsp.enable({ "lua_ls", "ty", "texlab" })
+vim.lsp.enable({ "lua_ls", "ty", "texlab", "beancount" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
@@ -102,7 +102,7 @@ require("scrollEOF").setup()
 require("diffview").setup()
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "lua", "python" },
+	pattern = { "lua", "python", "beancount" },
 	callback = function()
 		vim.treesitter.start()
 	end,
@@ -139,4 +139,12 @@ vim.api.nvim_create_autocmd("BufWritePre", { --fire this auto command when "BufW
 require("mason").setup()
 require("lualine").setup({
 	sections = { lualine_x = { "lsp_status", "encoding", "fileformat", "filetype" } },
+})
+
+--- Filetype Detection ---
+vim.filetype.add({
+	extension = {
+		beancount = "beancount",
+		bean = "beancount",
+	},
 })
