@@ -44,11 +44,11 @@ do
 	})
 
 	vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-  vim.keymap.set("n", "<leader>td", function()
-    if vim.diagnostic.is_enabled() then
-      vim.diagnostic.enable(false)
-    else
-      vim.diagnostic.enable()
-    end
-  end, { desc = "toggle diagnostic float"})
+	vim.keymap.set("n", "<leader>td", function()
+		if vim.diagnostic.is_enabled() then
+			vim.diagnostic.enable(false)
+		else
+			vim.diagnostic.enable()
+		end
+	end, { desc = "toggle diagnostic float" })
 end
