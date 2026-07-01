@@ -162,6 +162,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		tex = { "tex-fmt" },
 		beancount = { "bean-format" },
+		python = { "ruff_format" },
 	},
 })
 
