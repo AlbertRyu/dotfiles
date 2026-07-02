@@ -129,6 +129,7 @@ require("mini.tabline").setup({})
 require("mini.sessions").setup({
 	autoread = true,
 })
+require("mini.comment").setup({})
 --require("mini.git").setup({})
 --require("mini.diff").setup({})
 --require("mini.completion").setup({})
