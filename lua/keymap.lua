@@ -1,3 +1,6 @@
+-- Clear highlight on search when hit <ESC> in normal mode
+vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>")
+
 -- Keymap for MiniFiles
 vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open()<CR>")
 
