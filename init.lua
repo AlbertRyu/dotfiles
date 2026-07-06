@@ -32,6 +32,12 @@ do
 
 	--Minimal number of lines above and below the cursor
 	vim.opt.scrolloff = 5
+
+	-- ignore care when searching
+	vim.opt.ignorecase = true
+
+	-- case sensitive when there's Capital letters.
+	vim.opt.smartcase = true
 end
 
 -- Tabsize for each language
@@ -120,7 +126,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- end of configuration for beancount
 
-vim.lsp.enable({ "lua_ls", "ty", "texlab" })
+vim.lsp.enable({ "lua_ls", "ty", "texlab", "marksman" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
@@ -130,6 +136,7 @@ require("mini.sessions").setup({
 	autoread = true,
 })
 require("mini.comment").setup({})
+require("mini.fuzzy").setup({})
 --require("mini.git").setup({})
 --require("mini.diff").setup({})
 --require("mini.completion").setup({})
