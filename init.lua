@@ -88,6 +88,9 @@ vim.pack.add({
 	"https://github.com/nvim-treesitter/nvim-treesitter",
 
 	"https://github.com/Aasim-A/scrollEOF.nvim",
+
+	-- Markdown render
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 })
 
 --- beancount-language-server configuration ---
@@ -142,11 +145,11 @@ require("mini.fuzzy").setup({})
 --require("mini.completion").setup({})
 
 require("scrollEOF").setup()
-
 require("diffview").setup()
+require("render-markdown").setup({})
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "lua", "python", "beancount" },
+	pattern = { "lua", "python", "beancount", "markdown" },
 	callback = function()
 		vim.treesitter.start()
 	end,
@@ -171,6 +174,7 @@ require("conform").setup({
 		tex = { "tex-fmt" },
 		beancount = { "bean-format" },
 		python = { "ruff_format" },
+		markdown = { "mdformat" },
 	},
 })
 
