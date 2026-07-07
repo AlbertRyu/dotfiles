@@ -1,3 +1,5 @@
+vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim-jupyter/bin/python")
+
 -- This is when I try to learn the good part of kickstart.nvim
 
 -- The core part
@@ -91,6 +93,15 @@ vim.pack.add({
 
 	-- Markdown render
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+
+	-- Run interactive Python
+	"https://github.com/benlubas/molten-nvim",
+
+	-- Image Render Support
+	"https://github.com/3rd/image.nvim",
+
+	-- Jupyter Editing
+	"https://github.com/GCBallesteros/jupytext.nvim",
 })
 
 --- beancount-language-server configuration ---
@@ -147,6 +158,26 @@ require("mini.fuzzy").setup({})
 require("scrollEOF").setup()
 require("diffview").setup()
 require("render-markdown").setup({})
+require("image").setup({
+	backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+	integrations = {}, -- do whatever you want with image.nvim's integrations
+	max_width = 100, -- tweak to preference
+	max_height = 12, -- ^
+	max_height_window_percentage = math.huge, -- this is necessary for a good experience
+	max_width_window_percentage = math.huge,
+	window_overlap_clear_enabled = true,
+	window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+})
+
+require("jupytext").setup({
+	style = "markdown",
+	output_extension = "md",
+	force_ft = "markdown",
+})
+
+-- molten（vim.g 变量）
+vim.g.molten_image_provider = "image.nvim"
+vim.g.molten_auto_open_output = true
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "lua", "python", "beancount", "markdown" },

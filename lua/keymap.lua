@@ -55,3 +55,11 @@ do
 		end
 	end, { desc = "toggle diagnostic float" })
 end
+
+vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>")
+vim.keymap.set("n", "<leader>mr", ":MoltenRestart<CR>")
+vim.keymap.set("n", "<leader>md", ":MoltenDeinit<CR>")
+
+vim.keymap.set("n", "<leader>me", ":MoltenEvaluateLine<CR>")
+vim.keymap.set("v", "<leader>me", ":<C-u>MoltenEvaluateVisual<CR>")
+--vim.keymap.set("n", "<leader>oh", ":MoltenHideOutput<CR>")
