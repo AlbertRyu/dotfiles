@@ -140,7 +140,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- end of configuration for beancount
 
-vim.lsp.enable({ "lua_ls", "ty", "texlab", "marksman" })
+vim.lsp.enable({ "lua_ls", "ty", "texlab", "marksman", "ltex_plus" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
