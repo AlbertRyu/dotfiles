@@ -31,8 +31,10 @@ do
 		underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
 		-- Switch between
-		virtual_text = true,
-		virtual_lines = false,
+		virtual_text = false,
+		virtual_lines = {
+			overflow = "wrap",
+		},
 
 		--Auto open the float when moving around diagnostic using [d, and ]d
 		jump = {
