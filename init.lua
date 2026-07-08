@@ -205,7 +205,7 @@ require("conform").setup({
 		tex = { "tex-fmt" },
 		beancount = { "bean-format" },
 		python = { "ruff_format" },
-		markdown = { "mdformat" },
+		--markdown = { "mdformat" },
 	},
 })
 
