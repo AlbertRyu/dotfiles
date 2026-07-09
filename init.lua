@@ -25,6 +25,9 @@ do
 	-- wrapped line show the same indent as original
 	vim.opt.breakindent = true
 
+	vim.opt.wrap = true
+	vim.opt.linebreak = true
+
 	--enable redo/undo after close/reopen file
 	--This will save the undo/redo history in a seperate file
 	vim.opt.undofile = true
@@ -157,12 +160,20 @@ require("mini.fuzzy").setup({})
 
 require("scrollEOF").setup()
 require("diffview").setup()
-require("render-markdown").setup({})
+require("render-markdown").setup({
+	latex = {
+		enabled = true,
+		converter = "latex2text", -- 或 'utftex'
+		inline = true,
+		block = true,
+	},
+})
 require("image").setup({
 	backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+	kitty_method = "normal",
 	integrations = {}, -- do whatever you want with image.nvim's integrations
 	max_width = 100, -- tweak to preference
-	max_height = 12, -- ^
+	max_height = 15, -- ^
 	max_height_window_percentage = math.huge, -- this is necessary for a good experience
 	max_width_window_percentage = math.huge,
 	window_overlap_clear_enabled = true,
