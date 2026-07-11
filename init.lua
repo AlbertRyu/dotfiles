@@ -105,6 +105,9 @@ vim.pack.add({
 
 	-- Jupyter Editing
 	"https://github.com/GCBallesteros/jupytext.nvim",
+
+	-- Outline and TOC
+	"https://github.com/stevearc/aerial.nvim",
 })
 
 --- beancount-language-server configuration ---
@@ -157,6 +160,15 @@ require("mini.fuzzy").setup({})
 --require("mini.git").setup({})
 --require("mini.diff").setup({})
 --require("mini.completion").setup({})
+
+require("aerial").setup({
+
+	on_attach = function(bufnr)
+		vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+		vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+		vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+	end,
+})
 
 require("scrollEOF").setup()
 require("diffview").setup()
@@ -216,7 +228,7 @@ require("conform").setup({
 		tex = { "tex-fmt" },
 		beancount = { "bean-format" },
 		python = { "ruff_format" },
-		--markdown = { "mdformat" },
+		markdown = { "mdformat" },
 	},
 })
 
