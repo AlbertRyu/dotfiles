@@ -146,7 +146,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- end of configuration for beancount
 
-vim.lsp.enable({ "lua_ls", "ty", "texlab", "marksman", "ltex_plus" })
+vim.lsp.enable({ "lua_ls", "ty", "texlab", "marksman", "ltex_plus", "fish_lsp" })
 
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
@@ -229,6 +229,7 @@ require("conform").setup({
 		beancount = { "bean-format" },
 		python = { "ruff_format" },
 		markdown = { "mdformat" },
+		fish = { "fish_indent" },
 	},
 })
 
