@@ -1,0 +1,7 @@
+.DS_Store
+Session.vim
+
+# do not track anyfile start with temp
+temp.*
+
+
