@@ -1,3 +1,7 @@
 .DS_Store
-nvim-pack-lock.json
 Session.vim
+
+# do not track anyfile start with temp
+temp.*
+
+
