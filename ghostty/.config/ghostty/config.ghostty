@@ -1,0 +1,7 @@
+theme = dawnfox 
+font-size = 20
+
+# Default : Jetbrains Nerf Font Mono
+#font-family = "MesloLGS Nerd Font Mono"
+
+command = /opt/homebrew/bin/fish
