@@ -58,3 +58,6 @@ vim.keymap.set("n", "<leader>rr", ":MoltenReevaluateCell<CR>", { silent = true, 
 -- Natrual Movement of cursor
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- code action for LSP
+vim.keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>")
