@@ -13,6 +13,9 @@ return {
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
+	opts_extend = {
+		"sources.default",
+	},
 	opts = {
 		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 		-- 'super-tab' for mappings similar to vscode (tab to accept)
