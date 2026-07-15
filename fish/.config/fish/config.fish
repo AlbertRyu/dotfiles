@@ -22,6 +22,11 @@ function activate_data
     source ~/.venvs/data/bin/activate.fish
 end
 
+#build pdf
+function build_pdf
+    pandoc $argv -F pandoc-crossref --citeproc -o output.pdf --pdf-engine xelatex
+end
+
 ## Add zoxide as a better cd
 zoxide init fish | source
 
