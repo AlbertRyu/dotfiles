@@ -57,3 +57,51 @@ vim.filetype.add({
 		bean = "beancount",
 	},
 })
+
+-- diagnostic related
+do
+	vim.diagnostic.config({
+		update_in_insert = false, -- better performance
+		severity_sort = true,
+		float = { border = "rounded", source = "if_many" },
+		underline = true, --{ severity = { min = vim.diagnostic.severity.WARN } },
+
+		-- Switch between
+		virtual_text = false,
+		virtual_lines = false,
+
+		--Auto open the float when moving around diagnostic using [d, and ]d
+		jump = {
+			on_jump = function(_, bufnr)
+				vim.diagnostic.open_float({
+					bufnr = bufnr,
+					scope = "cursor",
+					focus = false,
+				})
+			end,
+		},
+	})
+
+	vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+	vim.keymap.set("n", "<leader>td", function()
+		if vim.diagnostic.is_enabled() then
+			vim.diagnostic.enable(false)
+		else
+			vim.diagnostic.enable()
+		end
+	end, { desc = "toggle diagnostic float" })
+
+	vim.o.updatetime = 300 -- 光标停留多久(毫秒)后触发,默认4000太慢
+
+	vim.api.nvim_create_autocmd("CursorHold", {
+		callback = function()
+			vim.diagnostic.open_float(nil, {
+				focusable = false,
+				close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+				border = "rounded",
+				source = "always",
+				prefix = " ",
+			})
+		end,
+	})
+end
