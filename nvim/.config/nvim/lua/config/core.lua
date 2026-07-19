@@ -39,7 +39,7 @@ end
 
 -- Regarding the theme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme("dayfox")
+vim.cmd.colorscheme("tokyonight")
 
 -- Tabsize for each language
 vim.api.nvim_create_autocmd("FileType", {
