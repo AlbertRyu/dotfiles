@@ -1,5 +1,8 @@
 -- Clear highlight on search when hit <ESC> in normal mode
-vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<ESC>", function()
+	vim.cmd("nohlsearch")
+	vim.fn.setreg("/", "")
+end)
 
 -- For calling Lazygit
 vim.keymap.set("n", "<leader>gg", function()
