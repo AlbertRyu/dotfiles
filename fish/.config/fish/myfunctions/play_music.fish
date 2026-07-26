@@ -2,6 +2,7 @@ function play_music
     set -l presets \
         "Work Music | https://www.youtube.com/watch?v=-uOUir_YSTw" \
         "Hyrule Zelda | https://www.youtube.com/watch?v=HGq5AfuYAIo" \
+        "Ace Attorney | https://www.youtube.com/watch?v=XXrKbxpVfKc" \
         "Lofi Girl | https://www.youtube.com/watch?v=X4VbdwhkE10"
 
     for i in (seq (count $presets))
