@@ -8,11 +8,6 @@ function lt
     eza --all --tree --level=2 --icons $argv
 end
 
-# Personal Funcitons
-function serve
-    python3 -m http.server
-end
-
 #Activate Python Env
 function activate_data
     source ~/.venvs/data/bin/activate.fish
@@ -30,3 +25,7 @@ zoxide init fish | source
 # Known bug, https://github.com/IlanCosman/tide/pull/659
 # This fix the chevron pointing left
 set -g fish_key_bindings fish_default_key_bindings
+
+function python
+    /Users/yunxiao/.local/share/uv/python/cpython-3.13-macos-aarch64-none/bin/python3.13 $argv
+end
