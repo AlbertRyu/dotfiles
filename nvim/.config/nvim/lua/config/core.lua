@@ -1,3 +1,5 @@
+vim.g.python3_host_prog = vim.fn.expand("/Users/yunxiao/.venvs/nvim-python/bin/python")
+
 do
 	-- Enable experimental loader, should be faster, but not 100% stable.
 	vim.loader.enable()
