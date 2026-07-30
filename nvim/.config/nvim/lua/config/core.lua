@@ -67,6 +67,12 @@ vim.filetype.add({
 		beancount = "beancount",
 		bean = "beancount",
 	},
+	filename = {
+		["compose.yaml"] = "yaml.docker-compose",
+		["compose.yml"] = "yaml.docker-compose",
+		["docker-compose.yaml"] = "yaml.docker-compose",
+		["docker-compose.yml"] = "yaml.docker-compose",
+	},
 })
 
 -- diagnostic related
