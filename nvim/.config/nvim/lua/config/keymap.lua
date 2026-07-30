@@ -6,7 +6,7 @@ end)
 
 -- For calling Lazygit
 vim.keymap.set("n", "<leader>gg", function()
-	vim.cmd("terminal Lazygit")
+	vim.cmd("terminal lazygit")
 	vim.cmd("startinsert")
 end)
 
