@@ -9,4 +9,16 @@ return {
 		{ "mason-org/mason.nvim", opts = {} },
 		"neovim/nvim-lspconfig",
 	},
+	config = function(_, opts)
+		vim.lsp.config("clangd", {
+			cmd = {
+				vim.fn.expand("~/.local/share/nvim/mason/bin/clangd"),
+				"--query-driver=/Users/yunxiao/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-*",
+				"--background-index",
+				"--pch-storage=memory",
+				"--header-insertion=never",
+			},
+		})
+		require("mason-lspconfig").setup(opts)
+	end,
 }
