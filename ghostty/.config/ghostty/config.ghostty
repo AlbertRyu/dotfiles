@@ -5,3 +5,7 @@ font-size = 20
 #font-family = "MesloLGS Nerd Font Mono"
 
 command = /opt/homebrew/bin/fish
+
+macos-option-as-alt = left
+
+
