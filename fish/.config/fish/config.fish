@@ -10,7 +10,7 @@ end
 
 #Activate Python Env
 function activate_data
-    source ~/.venvs/data/bin/activate.fish
+    source ~/.venvs/Data_Analysis/bin/activate.fish
 end
 
 #build pdf
