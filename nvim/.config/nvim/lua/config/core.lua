@@ -45,7 +45,7 @@ vim.cmd.colorscheme("tokyonight-day")
 
 -- Tabsize for each language
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "fish", "lua", "javascript", "typescript", "html", "css" },
+	pattern = { "cpp", "fish", "lua", "javascript", "typescript", "html", "css" },
 	callback = function()
 		vim.opt_local.tabstop = 2
 		vim.opt_local.shiftwidth = 2
