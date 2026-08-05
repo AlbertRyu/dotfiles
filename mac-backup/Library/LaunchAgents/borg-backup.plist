@@ -14,5 +14,11 @@
 
     <key>StartInterval</key>
     <integer>7200</integer>
+
+    <key>StandardOutPath</key>
+    <string>/Users/yunxiao/Library/Logs/borgmatic.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/yunxiao/Library/Logs/borgmatic.log</string>
+
 </dict>
 </plist>
