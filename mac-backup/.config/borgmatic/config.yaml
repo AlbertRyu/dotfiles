@@ -221,7 +221,7 @@ exclude_patterns:
 # access encrypted systemd service credentials. Defaults to not set.
 # For more details, see:
 # https://torsion.org/borgmatic/how-to/provide-your-passwords/
-# encryption_passcommand: secret-tool lookup borg-repository repo-name
+encryption_passcommand: security find-generic-password -a yunxiao -s borg-passphrase -w
 
 # Passphrase to unlock the encryption key with. Only use on
 # repositories that were initialized with passphrase/repokey/keyfile
