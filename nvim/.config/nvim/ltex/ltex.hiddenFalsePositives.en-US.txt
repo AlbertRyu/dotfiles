@@ -3,3 +3,5 @@
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Atrapa-|Dummy\\+|Dummy's\\+)[0-9]+\\Q (Kelvin) Spin Flop Along?\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q/newpage\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSingle crystal X-ray diffraction is conducted on a Rigaku single crystal X-ray diffractometer with the Oxford cryosystems.\\E$"}
+{"rule":"BEEN_PART_AGREEMENT","sentence":"^\\QFor the \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Atrapa-|Dummy\\+|Dummy's\\+)[0-9]+\\Q ions studied the orbital moment is quenched, and thus the moment is purely spin.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThus, it is convenient to define an order parameter L as a measure of antiferromagnetic order (Néel order parameter).\\E$"}
