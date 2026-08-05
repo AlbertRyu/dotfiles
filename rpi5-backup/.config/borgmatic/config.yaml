@@ -1,0 +1,60 @@
+source_directories:
+    - /etc
+    - /root
+    - /home/yunxiao
+    - /srv/db-dumps                  # 下面钩子的落地点
+
+    # Seafile
+    - /opt/seafile
+
+    #Immich
+    - /opt/immich/library # postgres backup is also in this folder.
+
+before_backup:
+    # 准备目录
+    - mkdir -p /srv/db-dumps && chmod 700 /srv/db-dumps
+
+    # Seafile 三个库
+    - docker exec seafile-mysql sh -c 'mariadb-dump -uroot -p"$MYSQL_ROOT_PASSWORD" --single-transaction --opt ccnet_db'   > /srv/db-dumps/ccnet_db.sql
+    - docker exec seafile-mysql sh -c 'mariadb-dump -uroot -p"$MYSQL_ROOT_PASSWORD" --single-transaction --opt seafile_db' > /srv/db-dumps/seafile_db.sql
+    - docker exec seafile-mysql sh -c 'mariadb-dump -uroot -p"$MYSQL_ROOT_PASSWORD" --single-transaction --opt seahub_db'  > /srv/db-dumps/seahub_db.sql
+
+exclude_patterns:
+    # 数据库活文件:已经有 dump 了,原始文件既大又不可靠
+    - /opt/seafile/seafile-mysql/db
+
+    - '*/node_modules'
+    - '/home/*/.cache'
+
+    - /home/yunxiao/.rustup           # 1.5G  rustup install 可重装
+    - /home/yunxiao/.vscode-server    # 1.2G  重连时自动下载
+    - /home/yunxiao/.cache            # 1.2G
+    - /home/yunxiao/.npm-global       # 897M  全局包,npm i -g 可重装
+    - /home/yunxiao/.npm              # 477M  纯下载缓存
+    - /home/yunxiao/.cargo/registry   # 注意只排 registry
+    - /home/yunxiao/.oh-my-zsh
+
+repositories:
+    - path: ssh://u645441@u645441.your-storagebox.de:23/./raspberrypi
+
+encryption_passcommand: cat /home/yunxiao/.config/borg/passphrase
+
+ssh_command: ssh -i /home/yunxiao/.ssh/id_ed25519_hetzner -o IdentitiesOnly=yes
+
+archive_name_format: '{hostname}-{now:%Y-%m-%dT%H:%M:%S}'
+
+# Retention
+keep_daily: 7
+keep_weekly: 4
+keep_monthly: 12
+keep_yearly: 2
+
+checks:
+    - name: repository
+      frequency: 2 weeks
+    - name: archives
+      frequency: 1 month
+
+# Notification
+healthchecks:
+    ping_url: https://hc-ping.com/2b1c6691-c7ba-4200-b08d-7319322ee655
