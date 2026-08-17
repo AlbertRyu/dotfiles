@@ -25,3 +25,6 @@ zoxide init fish | source
 # Known bug, https://github.com/IlanCosman/tide/pull/659
 # This fix the chevron pointing left
 set -g fish_key_bindings fish_default_key_bindings
+
+# set the greeting message to empty.
+set -g fish_greeting ""
