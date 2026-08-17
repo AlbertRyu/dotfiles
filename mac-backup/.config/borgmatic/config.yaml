@@ -1,5 +1,18 @@
 source_directories:
+
+    - /Users/yunxiao/.ssh
+    - /Users/yunxiao/.config
+    - /Users/yunxiao/dotfiles
+    - /Users/yunxiao/.gitconfig
+
+
     - /Users/yunxiao/documents
+    - /Users/yunxiao/Desktop
+    - /Users/yunxiao/Pictures
+    - /Users/yunxiao/Movies
+    - /Users/yunxiao/Music 
+
+    - /Users/yunxiao/Library/Keychains
 
 repositories:
     - path: ssh://u645441@u645441.your-storagebox.de:23/./macbook-air-m3
@@ -13,7 +26,7 @@ exclude_patterns:
     - '*.pyc'
     # PlatformIO（.pio 文件夹，嵌入式开发常见）
     - '*/.pio'
-
+    - '*/.DS_Store'
     # 通用构建产物
     - '*/build'
     - '*/dist'
