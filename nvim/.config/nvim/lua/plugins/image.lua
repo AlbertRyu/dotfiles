@@ -8,5 +8,10 @@ return {
 		max_height = 20, -- 单位是行,示例里写的 12
 		max_height_window_percentage = math.huge,
 		max_width_window_percentage = math.huge,
+
+		-- 切 tmux window 时自动隐藏/重绘图片（需要 tmux: focus-events on, visual-activity off）
+		tmux_show_only_in_active_window = true,
+		-- 切出 Ghostty/切到别的 app 时也隐藏，回来重绘；嫌闪可以设 false
+		editor_only_render_when_focused = true,
 	},
 }
