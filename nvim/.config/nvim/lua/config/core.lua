@@ -41,7 +41,15 @@ end
 
 -- Regarding the theme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme("tokyonight-day")
+
+require("modus-themes").setup({
+	style = "modus_operandi", -- 固定用浅色
+	variants = {
+		modus_operandi = "tinted",
+		modus_vivendi = "tinted",
+	},
+})
+vim.cmd.colorscheme("modus")
 
 -- Tabsize for each language
 vim.api.nvim_create_autocmd("FileType", {
