@@ -1,4 +1,7 @@
-theme = tokyonight day
+theme = Modus Operandi Tinted
+
+font-family = IBM Plex Mono
+font-family-italic = IBM Plex Mono Italic
 font-size = 20
 
 # Default : Jetbrains Nerf Font Mono
