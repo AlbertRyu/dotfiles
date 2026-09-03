@@ -1,3 +1,5 @@
+# This functions plays Youtube videos with only audios using MPV. However, this is unstable because youtube dislike its behaviour. It's now replaced by radio.fish. 
+
 function play_music
     set -l presets \
         "Work Music | https://www.youtube.com/watch?v=-uOUir_YSTw" \
