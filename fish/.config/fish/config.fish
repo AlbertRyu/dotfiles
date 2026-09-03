@@ -1,22 +1,15 @@
+# 将homebrew的path置之于最前
+if status is-interactive
+    eval (/opt/homebrew/bin/brew shellenv)
+end
 # eza related config
 function ls
-    eza --all --icons --group-directories-first $argv
+    eza --icons --group-directories-first $argv
 end
 
 # 树状显示目录结构,默认显示 2 层
 function lt
     eza --all --tree --level=2 --icons $argv
-end
-
-#Activate Python Env
-function activate_data
-    source ~/.venvs/Data_Analysis/bin/activate.fish
-end
-
-#build pdf
-function build_pdf
-    set -l output (string replace -r '\.[^.]*$' '' $argv).pdf
-    pandoc $argv -F pandoc-crossref --citeproc -o $output --pdf-engine xelatex
 end
 
 ## Add zoxide as a better cd
