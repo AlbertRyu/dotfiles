@@ -1,3 +1,6 @@
+# Direnv install
+direnv hook fish | source
+
 # 将homebrew的path置之于最前
 if status is-interactive
     eval (/opt/homebrew/bin/brew shellenv)
