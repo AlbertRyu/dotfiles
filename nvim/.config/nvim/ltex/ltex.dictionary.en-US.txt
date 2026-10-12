@@ -51,3 +51,7 @@ sublattice
 Septiany
 Savitzky-Golay
 magnetometry
+magnetocaloric
+uniformally
+metamagnetic
+tunability
