@@ -4,12 +4,6 @@ vim.keymap.set("n", "<ESC>", function()
 	vim.fn.setreg("/", "")
 end)
 
--- For calling Lazygit
-vim.keymap.set("n", "<leader>gg", function()
-	vim.cmd("terminal lazygit")
-	vim.cmd("startinsert")
-end)
-
 -- Set <J>-<K> to be the shortcut of Esc, very important for me.
 vim.keymap.set("i", "jk", "<Esc>")
 
