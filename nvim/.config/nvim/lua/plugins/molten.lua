@@ -41,13 +41,14 @@ end
 return {
 	{
 		"benlubas/molten-nvim",
-		version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-		dependencies = { "3rd/image.nvim" },
+		-- 用 snacks.nvim 当图片后端 (#299) 还没进任何 release（最新 v1.9.2），只能跟 main
+		version = false,
+		dependencies = { "folke/snacks.nvim" },
 		build = ":UpdateRemotePlugins",
 		lazy = false,
 		init = function()
 			-- these are examples, not defaults. Please see the readme
-			vim.g.molten_image_provider = "image.nvim"
+			vim.g.molten_image_provider = "snacks.nvim"
 			vim.g.molten_output_win_max_height = 30
 
 			vim.g.molten_virt_text_output = true
