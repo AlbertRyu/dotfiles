@@ -6,7 +6,9 @@ return {
 			tex = { "tex-fmt" },
 			beancount = { "bean-format" },
 			python = { "ruff_format" },
-			markdown = { "mdformat" },
+			markdown = { "rumdl" },
+			-- I have used mdformat (installed via uv tool) for a long time. I decided to give rumdl a try for it seems like offering a better performance and support for obsidian flavor.
+			-- I have kept a personal obsidian vault for years.
 			fish = { "fish_indent" },
 			cpp = { "clang_format" },
 		},
