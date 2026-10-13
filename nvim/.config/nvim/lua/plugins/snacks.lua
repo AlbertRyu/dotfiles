@@ -9,7 +9,15 @@ return {
 		lazygit = {},
 		-- 在 markdown 等文件里直接显示图片（Ghostty 支持 kitty 图形协议）。
 		-- 非 PNG 格式靠 ImageMagick 转换；tmux 里需要 allow-passthrough on。
-		image = { enabled = true },
+		image = {
+			enabled = true,
+			doc = {
+				-- 图片显示的最大尺寸，单位是终端的列数/行数（不是像素），按比例缩放。
+				-- 默认 80x40；molten 的输出图片也读这两个值。
+				max_width = 30,
+				max_height = 10,
+			},
+		},
 	},
 	keys = {
 		{
